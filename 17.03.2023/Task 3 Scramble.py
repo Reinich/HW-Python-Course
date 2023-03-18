@@ -22,18 +22,28 @@ ru_dict = {1: ['А', 'В', 'Е', 'И', 'Н', 'О', 'Р', 'С', 'Т'],
            8: ['Ш', 'Э', 'Ю'],
            10: ['Ф', 'Щ', 'Ъ']
            }
-word = str(input('Введите слово: '))
+word = input('Введите слово: ')
 sum_char = 0
+ru_word, en_word = 0, 0
 
-for i in range(len(word)):
-    for j in en_dict.keys():
-        for k in range(len(en_dict[j])):
-            if word[i].casefold() == en_dict[j][k].casefold():
-                sum_char += j
-for i in range(len(word)):
-    for j in ru_dict.keys():
-        for k in range(len(ru_dict[j])):
-            if word[i].casefold() == ru_dict[j][k].casefold():
-                sum_char += j
+for i in word:
+    for k in ru_dict.keys():
+        if i.upper() in ru_dict.get(k):
+            ru_word += 1
+        elif i.upper() in en_dict.get(k):
+            en_word += 1
+if ru_word > 0 and en_word > 0:
+    print('В слове присутствует буква другого языка. Повторите попытку.')
+else:
+    for i in word:
+        for j in ru_dict.keys():
+            for k in range(len(ru_dict[j])):
+                if i.casefold() == ru_dict[j][k].casefold():
+                    sum_char += j
 
-print(sum_char)
+    for i in word:
+        for j in en_dict.keys():
+            for k in range(len(en_dict[j])):
+                if i.casefold() == en_dict[j][k].casefold():
+                    sum_char += j
+    print(sum_char)
