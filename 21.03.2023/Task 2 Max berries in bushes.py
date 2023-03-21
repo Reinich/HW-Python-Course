@@ -12,11 +12,9 @@ sum_max = 0
 count_berries = []
 
 for x in range(0, n):
-    if x == 0:
-        count_berries.append(sum_max := bush[x] + bush[-1] + bush[x + 1])
-    elif x == n - 1:
+    if x == n - 1:
         count_berries.append(sum_max := bush[-1] + bush[0] + bush[-2])
     else:
-        count_berries.append(sum_max := bush[x] + bush[x + 1] + bush[x - 1])
+        count_berries.append(sum_max := bush[x - 1] + bush[x] + bush[x + 1])
 
 print(f'Максимальное количество ягод: {max(count_berries)}')
