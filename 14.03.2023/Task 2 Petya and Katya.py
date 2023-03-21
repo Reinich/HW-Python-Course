@@ -5,10 +5,8 @@
 # Помогите Кате отгадать задуманные Петей числа.
 
 from random import randint
-x = randint(2, 10)
-y = randint(2, 10)
-print(x)
-print(y)
+x = randint(2, 1000)
+y = randint(2, 1000)
 print(f'Угадай два числа.\nПодсказки: сумма чисел равна = {x+y}, а произведение = {x*y}. Удачи!')
 print()
 num_1 = int(input('Первое число: '))
