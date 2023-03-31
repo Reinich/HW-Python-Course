@@ -5,7 +5,7 @@
 
 def operation_table(operation, x, y):
     for i in range(1, y + 1):
-        print(*[(i*j) for j in range(1, x+1)])
+        print(*[(i*j) for j in range(1, x+1)], sep='\t')
 
 
 num_rows = int(input('Введите количество строк: '))
