@@ -7,6 +7,8 @@ def operation_table(operation, x, y):
     for i in range(1, y + 1):
         print(*[(i*j) for j in range(1, x+1)], sep='\t')
 
+    # arr = '\n'.join(['\t'.join([str(j) for j in i]) for i in res]) красивый вывод говна
+
 
 num_rows = int(input('Введите количество строк: '))
 num_columns = int(input('Введите количество столбцов: '))
