@@ -68,9 +68,6 @@ def change_file():
                                     lst[3] = new_info
                                     list_info.append(lst := ' '.join(lst))
                                     print(lst, '\n')
-                                # case '5':  # Если нужно выйти из цикла
-                                #     list_info.append(lst := ' '.join(lst))
-                                #     break
                             num_change = input(f'Хотите изменить что-то еще?\n{phrase}')
                     else:
                         list_info.append(lst := ' '.join(lst))
@@ -79,7 +76,6 @@ def change_file():
                     # счетчик больше или равен 2
                     list_info.append(line)
                     count_match -= 1
-                    continue
                 else:
                     list_info.append(line)  # Если совпадений по поиску больше нет, добавляем, чтобы в конце
                     # перезаписалось все, что было
